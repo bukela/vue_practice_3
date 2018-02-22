@@ -2,7 +2,8 @@ Vue.component('greeting',{
 	template: '<p class="reusable">{{ name }} says helloo from reusable component <button v-on:click="changeName">Change name</button></p>',
 	data: function() {
 		return {
-			name: 'Loodie'
+			name: 'Loodie',
+			
 		}
 	},
 	methods: {
@@ -15,10 +16,13 @@ var one = new Vue({
   	el: '#app-one',
   	data: {
 		title: 'vue app one',
+		output: 'Fav food',
 	},
 	methods: {
 		readRefs: function() {
-			console.log(this.$refs);
+			console.log(this.$refs.input.value);
+			console.log(this.$refs.test.innerText);
+			this.output = this.$refs.input.value;
 		}
 	},
 	computed: {
